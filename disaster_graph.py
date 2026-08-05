@@ -10,8 +10,6 @@ from agents.report_agent import report_agent
 
 
 
-# State definition
-
 class DisasterState(TypedDict):
 
     X: object
@@ -24,7 +22,6 @@ class DisasterState(TypedDict):
 
 
 
-# Supervisor Node
 
 def supervisor_node(state):
 
@@ -38,9 +35,6 @@ def supervisor_node(state):
         "agent_result": agent
     }
 
-
-
-# Flood Node
 
 def flood_node(state):
 
@@ -58,8 +52,6 @@ def flood_node(state):
 
 
 
-# Cyclone Node
-
 def cyclone_node(state):
 
 
@@ -76,8 +68,6 @@ def cyclone_node(state):
 
 
 
-
-# Report Node
 
 def report_node(state):
 
@@ -100,8 +90,6 @@ def report_node(state):
 
 
 
-# Router
-
 def route_agent(state):
 
 
@@ -122,7 +110,7 @@ def route_agent(state):
 
 
 
-# Create Graph
+
 
 workflow = StateGraph(
     DisasterState
