@@ -9,9 +9,6 @@ from tools.rag_tool import get_guidelines
 def disaster_agent(disaster_type, X):
 
 
-    # -----------------------------
-    # Select Prediction Tool
-    # -----------------------------
 
     if disaster_type == "Flood":
 
@@ -33,9 +30,7 @@ def disaster_agent(disaster_type, X):
 
 
 
-    # -----------------------------
-    # SHAP Explanation
-    # -----------------------------
+
 
     explanation = shap_explanation(
         model,
@@ -43,10 +38,6 @@ def disaster_agent(disaster_type, X):
     )
 
 
-
-    # -----------------------------
-    # RAG Retrieval
-    # -----------------------------
 
     guidelines = get_guidelines(
         f"""
@@ -62,10 +53,6 @@ def disaster_agent(disaster_type, X):
     )
 
 
-
-    # -----------------------------
-    # Ollama Prompt
-    # -----------------------------
 
     prompt = f"""
 
@@ -152,10 +139,6 @@ Keep the report professional and concise.
 """
 
 
-
-    # -----------------------------
-    # Generate Report
-    # -----------------------------
 
     report = generate_report(
         prompt
