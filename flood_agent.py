@@ -7,7 +7,6 @@ from tools.rag_tool import get_guidelines
 def flood_agent(X):
 
 
-    # Flood ML Prediction
 
     prediction = flood_prediction(
         X
@@ -15,7 +14,6 @@ def flood_agent(X):
 
 
 
-    # SHAP Explanation
 
     explanation = shap_explanation(
         prediction["model"],
@@ -24,7 +22,6 @@ def flood_agent(X):
 
 
 
-    # Retrieve Disaster Guidelines
 
     guidelines = get_guidelines(
         "Flood disaster safety recommendations and emergency actions"
