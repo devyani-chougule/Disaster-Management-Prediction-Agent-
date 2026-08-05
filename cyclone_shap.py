@@ -3,13 +3,13 @@ import pandas as pd
 import shap
 
 
-# Load model
+
 model = joblib.load(
     r"C:\Users\Devyani Chougule\Downloads\cyclone_model.pkl"
 )
 
 
-# Same input used for prediction
+
 
 sample = pd.DataFrame({
     "Basin": [0],
@@ -24,12 +24,11 @@ sample = pd.DataFrame({
 })
 
 
-# Create SHAP explainer
 
 explainer = shap.TreeExplainer(model)
 
 
-# Calculate SHAP values
+
 
 shap_values = explainer.shap_values(sample)
 
@@ -38,7 +37,6 @@ print("SHAP Explanation")
 print("----------------")
 
 
-# Handle new SHAP output format
 
 if isinstance(shap_values, list):
     values = shap_values[1][0]
